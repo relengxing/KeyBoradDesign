@@ -310,8 +310,14 @@ public class MyKeyBoard extends SurfaceView implements View.OnTouchListener{
                     ( event.getY()>key.getCurrentY())&&
                     ( event.getY()<key.getCurrentY()+key.getHeight()))
             {
-                key.setColor(getSetColor());
-                reDraw();
+                if (getSetColor() == key.getColor()) {
+                    key.setColor(Color.GRAY);
+                    reDraw();
+                }else {
+                    key.setColor(getSetColor());
+                    reDraw();
+                }
+
             }
         }
 
